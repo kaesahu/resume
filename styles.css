@@ -1,0 +1,431 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* 1. Global Styles and Variables */
+:root {
+    --primary-color: #F4A261; /* Matte orange */
+    --secondary-color: #4DD0E1; /* Light sea green blue */
+    --accent-color: #E76F51; /* Coral */
+    --background-color: #E0F7FA; /* Very light sea green blue */
+    --section-bg-color: #FFFFFF; /* White */
+    --text-color: #2A3C4E; /* Dark blue grey for main text */
+    --light-text-color: #607D8B; /* Blue grey for less emphasis */
+    --white: #FFFFFF;
+    --off-white: #F5FCFE; /* Very light blue tint */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.75rem; }
+h3 { font-size: 2.25rem; }
+
+p { margin-bottom: 15px; }
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover { color: var(--accent-color); }
+
+/* 3. Buttons and Interactive Elements */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 4. Layout and Sections */
+section {
+    padding: 80px 20px;
+}
+
+section:nth-child(even) {
+    background-color: var(--section-bg-color);
+}
+
+/* 5. Header and Navigation */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li { margin-left: 30px; }
+
+nav ul li a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover { color: var(--accent-color); }
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* 6. Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 150px 20px;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: slideInFromLeft 0.5s ease-out;
+    color: var(--white);
+}
+
+.hero h2 {
+    font-size: 2.25rem;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* 7. Skills Section */
+.skills { background-color: var(--white); }
+
+.skill-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background-color: var(--off-white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-category ul { list-style-type: none; }
+
+.skill-category li {
+    background-color: var(--white);
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.skill-category li:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* 8. Experience and Education Sections */
+.experience { background-color: var(--section-bg-color); }
+
+.job, .degree {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.job:hover, .degree:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.job h3, .degree h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.job h4, .degree h4 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.job-duration, .education-duration {
+    font-style: italic;
+    color: var(--light-text-color);
+    margin-bottom: 15px;
+}
+
+.job ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.job li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.job li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: -20px;
+}
+
+/* 9. Certifications and Contact Sections */
+.certifications { background-color: var(--white); }
+
+.certifications ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.certifications li {
+    background-color: var(--off-white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.certifications li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.contact { background-color: var(--section-bg-color); }
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+/* 10. Footer and Accessibility */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p { font-size: 0.9rem; }
+
+/* Accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus { top: 0; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body { font-size: 14px; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2rem; }
+    section { padding: 60px 15px; }
+    
+    .hero {
+        padding: 100px 15px;
+    }
+    
+    .hero h1 { font-size: 3rem; }
+    .hero h2 { font-size: 1.75rem; }
+    
+    .skill-categories { grid-template-columns: 1fr; }
+    
+    .skill-category,
+    .job,
+    .degree,
+    .certifications li {
+        padding: 20px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Improved Mobile Navigation */
+    .mobile-menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.3s ease;
+    }
+
+    nav ul.show { left: 0; }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a { font-size: 1.2rem; }
+}
